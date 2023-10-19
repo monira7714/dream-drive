@@ -71,9 +71,10 @@ const NavBar = () => {
                             <div className="flex items-center">
                                 <img className="btn btn-ghost btn-circle avatar mr-2" src={auth.currentUser.photoURL} />
                                 <h1 className="mr-2">{auth.currentUser.displayName}</h1>
-                                <button onClick={handleLogOut} className="btn bg-[#ae4e81cf] text-white">Sign Out</button></div>
+                                <button onClick={handleLogOut} className="btn bg-secondary text-white capitalize font-semibold">Sign Out</button>
+                            </div>
                             : <Link to='/login'>
-                                <button className="btn">Login</button>
+                                <button className="btn bg-secondary text-lg text-white font-semibold capitalize">Login</button>
                             </Link>
                     }
                 </div>
