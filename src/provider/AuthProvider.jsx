@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 
 
 export const AuthContext = createContext(null);
+
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
