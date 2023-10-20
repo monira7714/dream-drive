@@ -4,6 +4,11 @@ import Home from './../Pages/Home';
 import ErrorPage from "../Components/ErrorPage";
 import Register from "../Pages/Register";
 import Login from "../Pages/Login";
+import PrivateRouter from "./PrivateRouter";
+import AddProduct from "../Pages/AddProduct";
+import MyCart from "../Pages/MyCart";
+import BrandDetails from "../Pages/BrandDetails";
+import UpdateProduct from "../Pages/UpdateProduct";
 
 const router = createBrowserRouter([
     {
@@ -25,19 +30,27 @@ const router = createBrowserRouter([
                 path: '/login',
                 element: <Login></Login>
             },
+            {
+                path: '/brandDetails/:id',
+                element: <BrandDetails></BrandDetails>
+            },
+            {
+                path: '/addProduct',
+                element:<PrivateRouter><AddProduct></AddProduct></PrivateRouter>
+            },
+            {
+                path: '/updateProduct/:id',
+                element: <PrivateRouter><UpdateProduct></UpdateProduct></PrivateRouter>
+            },
+            {
+              path: '/myCart',
+              element:<PrivateRouter><MyCart></MyCart></PrivateRouter>
+            }
             // {
             //   path:'/services/:id',
             //   element:<PrivateRoute><ShowDetails></ShowDetails></PrivateRoute>,
             //   loader: ()=> fetch('/services.json')
             // },
-            // {
-            //   path: '/profile',
-            //   element:<PrivateRoute><YourProfile></YourProfile></PrivateRoute>
-            // },
-            // {
-            //   path: '/blog',
-            //   element:<PrivateRoute><Blog></Blog></PrivateRoute>
-            // }
         ]
 
 

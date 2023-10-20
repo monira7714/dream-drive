@@ -27,7 +27,7 @@ const Home = () => {
                 <h2 className="text-5xl font-bold text-[#e73f93] ml-2">Our Brand Partners </h2>
                 <div className="my-12 grid md:grid-cols-3 grid-cols-2 gap-8 p-4">
                     {
-                        brands.map(brand => <Link to='/' key={brand.name}><Brands brand={brand}></Brands></Link>)
+                        brands.map(brand => <Link to={`/brandDetails/:${brand.id}`} key={brand.id}><Brands brand={brand}></Brands></Link>)
                     }
                 </div>
             </div>

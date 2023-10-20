@@ -24,12 +24,12 @@ const NavBar = () => {
             return {
                 color: isActive ? "secondary" : "black",
             };
-        }} to='/profile'>Profile</NavLink></li>
+        }} to='/addProduct'>Add Product</NavLink></li>
         <li className="text-lg"><NavLink style={({ isActive }) => {
             return {
                 color: isActive ? "secondary" : "black",
             };
-        }} to='/blog'>Blog</NavLink></li>
+        }} to='/myCart'>My Cart</NavLink></li>
 
     </>
 
