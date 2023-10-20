@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Land Rover",
+        "image": "https://www.landrover.com/content/dam/lrdx/logo/lrdx-brand-logo-dark.svg"
+    },
+    {
+        "name": "Tesla",
+        "image": "https://i.ibb.co/PzxwsvK/tesla.png"
+    },
+    {
+        "name": "Audi",
+        "image": "https://i.ibb.co/MhC6Dqk/audi.png"
+    },
+    {
+        "name": "Toyota",
+        "image": "https://i.ibb.co/yQVQcpn/toyota.png"
+    },
+    {
+        "name": "Ford",
+        "image": "https://i.ibb.co/8068R8H/ford.png"
+    },
+    {
+        "name": "BMW",
+        "image": "https://i.ibb.co/4TNtK11/bmw.jpg"
+    }
+]
