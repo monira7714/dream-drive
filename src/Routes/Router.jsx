@@ -16,11 +16,10 @@ const router = createBrowserRouter([
         element: <Root></Root>,
         errorElement: <ErrorPage></ErrorPage>,
         children: [
-
             {
                 path: '/',
                 element: <Home></Home>,
-                // loader: ()=> fetch('/services.json')
+               
             },
             {
                 path: '/register',
@@ -32,7 +31,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/brandDetails/:id',
-                element: <BrandDetails></BrandDetails>
+                element: <BrandDetails></BrandDetails>,
+                loader: ({params})=> fetch(`https://tenth-assignment-server-6jj66qm9v-moniras-projects.vercel.app/products/${params.id}`)
             },
             {
                 path: '/addProduct',
@@ -46,14 +46,7 @@ const router = createBrowserRouter([
               path: '/myCart',
               element:<PrivateRouter><MyCart></MyCart></PrivateRouter>
             }
-            // {
-            //   path:'/services/:id',
-            //   element:<PrivateRoute><ShowDetails></ShowDetails></PrivateRoute>,
-            //   loader: ()=> fetch('/services.json')
-            // },
         ]
-
-
     },
 ]);
 

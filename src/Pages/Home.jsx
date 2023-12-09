@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData} from "react-router-dom";
 import Banner from "../Components/Banner";
 import Brands from "../Components/Brands";
 import Footer from "../Components/Footer";
@@ -12,13 +12,12 @@ import NewsLetter from "../Components/Counter";
 const Home = () => {
 
     const [brands, setBrands] = useState([])
-
     useEffect(() => {
-        fetch('/public/brands.json')
+        fetch('/brands.json')
             .then(res => res.json())
             .then(data => setBrands(data))
     }, [])
-
+    
     return (
         <div>
             <NavBar></NavBar>
@@ -31,8 +30,8 @@ const Home = () => {
                     }
                 </div>
             </div>
-            <Counter></Counter>
             <NewsLetter></NewsLetter>
+            <Counter></Counter>
             <Footer></Footer>
         </div>
     );

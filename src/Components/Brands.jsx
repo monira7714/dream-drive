@@ -1,5 +1,4 @@
 import { PropTypes } from 'prop-types';
-// import { FaTrophy } from 'react-icons/fa';
 
 const Brands = ({ brand }) => {
 
@@ -10,8 +9,6 @@ const Brands = ({ brand }) => {
             <figure className=''><img className='w-[200px] h-[150px]' src={brand.image} /></figure>
             <div className="card-body">
                 <h2 className="card-title text-5xl text-[#f37db8]">{brand.name}</h2>
-                {/* <FaTrophy></FaTrophy> */}
-
             </div>
         </div>
     );

@@ -1,20 +1,32 @@
-import { FaPaperPlane } from "react-icons/fa";
+import { FaCar, FaStar, FaTrophy, FaUsers } from 'react-icons/fa';
 
-const NewsLetter = () => {
+const Counter = () => {
     return (
-        <div className="w-full h-full mx-auto my-16">
-            <div className="w-full flex gap-12 items-center md:flex-row flex-col bg-secondary-focus px-40 py-24">
-                <div className="text-white mr-20 w-1/3">
-                    <h2 className="text-3xl font-medium mb-2">Newsletter</h2>
-                    <p className="">Subscribe for weekly newsletter</p>
+        <div className="bg-cover bg-no-repeat my-12 py-16 px-40" style={{ backgroundImage: 'url(https://i.ibb.co/sW7gBWX/counter-bg.jpg)' }}>
+            <div className="py lg:flex items-center gap-32 text-center text-[#f9c200]">
+                <div className='text-7xl flex flex-col items-center gap-4 p-4'>
+                    <FaUsers></FaUsers>
+                    <p className='text-6xl text-white'>519</p>
+                    <h4 className='text-lg text-[#999] uppercase'>Happy Client</h4>
                 </div>
-                <div className="flex w-2/3">
-                    <input className="p-4 w-2/3" type="email" placeholder="Enter Your Email Address" />
-                    <button className="flex px-6 py-4 bg-black text-white">Sign Up <FaPaperPlane></FaPaperPlane> </button>
+                <div className='text-7xl flex flex-col items-center gap-4 p-4'>
+                    <FaCar></FaCar>
+                    <p className='text-6xl text-white'>663</p>
+                    <h4 className='text-lg text-[#999] uppercase'>Car Sale</h4>
+                </div>
+                <div className='text-7xl flex flex-col items-center gap-4 p-4'>
+                    <FaStar></FaStar>
+                    <p className='text-6xl text-white'>4.6</p>
+                    <h4 className='text-lg text-[#999] uppercase'>Rating</h4>
+                </div>
+                <div className='text-7xl flex flex-col items-center gap-4 p-4'>
+                    <FaTrophy></FaTrophy>
+                    <p className='text-6xl text-white'>1023</p>
+                    <h4 className='text-lg text-[#999] uppercase'>Happy Client</h4>
                 </div>
             </div>
         </div>
     );
 };
 
-export default NewsLetter;
+export default Counter;

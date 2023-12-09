@@ -17,31 +17,30 @@ const AddProduct = () => {
         const category = form.category.value;
         const name = form.name.value;
         const des = form.des.value;
-        const supplier = form.supplier.value;
-        const taste = form.taste.value;
-        const details = form.details.value;
+        const price = form.price.value;
+        const ratings = form.ratings.value;
         const photo = form.photo.value;
-        const newCoffee = { brandName, category, name, des, supplier, taste, details, photo }
-        console.log(newCoffee);
+        const newProducts = { brandName, category, name, des, price, ratings, photo }
+        console.log(newProducts);
 
-        // fetch('http://localhost:5000/coffee', {
-        //     method: "POST",
-        //     headers: { 'content-type': 'application/json' },
-        //     body: JSON.stringify(newCoffee),
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         if (data.insertedId) {
-        //             Swal.fire({
-        //                 title: 'Success!',
-        //                 text: 'Coffee added successfully!',
-        //                 icon: 'success',
-        //                 confirmButtonText: 'Done',
+        fetch('https://tenth-assignment-server-6jj66qm9v-moniras-projects.vercel.app/products', {
+            method: "POST",
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(newProducts),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Product added successfully!',
+                        icon: 'success',
+                        confirmButtonText: 'Done',
 
-        //             })
-        //         }
-        //     })
+                    })
+                }
+            })
     }
     // bg-[#ae4e81cf]
 
@@ -70,7 +69,7 @@ const AddProduct = () => {
                             <span className="label-text">Brand Name</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="bandName" placeholder="Brand Name" className="input input-bordered w-full" />
+                            <input type="text" name="brandName" placeholder="Brand Name" className="input input-bordered w-full" />
                         </label>
                     </div>
                     {/* Category */}

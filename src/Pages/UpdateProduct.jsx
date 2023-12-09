@@ -1,43 +1,44 @@
-import { useLoaderData } from "react-router-dom";
-import Swal from "sweetalert2";
+// import { useLoaderData } from "react-router-dom";
+// import Swal from "sweetalert2";
 import NavBar from "../Components/NavBar";
 
 const UpdateProduct = () => {
 
-    const coffee = useLoaderData();
-    const { _id, name, quantity, supplier, taste, category, details, photo } = coffee;
+    // const coffee = useLoaderData();
+    // const { _id, name, quantity, supplier, taste, category, details, photo } = coffee;
 
-    const handleUpdateCoffee = e => {
+    const handleUpdateProduct = e => {
         e.preventDefault();
         const form = e.target;
+        const brandName = form.brandName.value;
+        const category = form.category.value;
         const name = form.name.value;
-        const quantity = form.quantity.value;
+        const des = form.des.value;
         const supplier = form.supplier.value;
         const taste = form.taste.value;
-        const category = form.category.value;
         const details = form.details.value;
         const photo = form.photo.value;
-        const UpdatedCoffee = { name, quantity, supplier, taste, category, details, photo }
+        const UpdatedCoffee = { brandName, category, name, des, supplier, taste, details, photo }
         console.log(UpdatedCoffee);
 
-        fetch(`http://localhost:5000/coffee/${_id}`, {
-            method: "PUT",
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(UpdatedCoffee),
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.modifiedCount > 0) {
-                    Swal.fire({
-                        title: 'Success!',
-                        text: 'Coffee updated successfully!',
-                        icon: 'success',
-                        confirmButtonText: 'Done',
+        // fetch(`http://localhost:5000/coffee/${_id}`, {
+        //     method: "PUT",
+        //     headers: { 'content-type': 'application/json' },
+        //     body: JSON.stringify(UpdatedCoffee),
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data);
+        //         if (data.modifiedCount > 0) {
+        //             Swal.fire({
+        //                 title: 'Success!',
+        //                 text: 'Coffee updated successfully!',
+        //                 icon: 'success',
+        //                 confirmButtonText: 'Done',
 
-                    })
-                }
-            })
+        //             })
+        //         }
+        //     })
     }
 
     return (
@@ -45,7 +46,7 @@ const UpdateProduct = () => {
             <NavBar></NavBar>
             <div className="mx-20 p-16 bg-[#f4f3f0] space-y-4">
                 <h1 className="text-3xl font-extrabold text-center">Update Coffee:{name}</h1>
-                <form onSubmit={handleUpdateCoffee} className="space-y-4">
+                <form onSubmit={handleUpdateProduct} className="space-y-4">
                     {/* form row */}
                     <div className="md:flex  justify-around ">
                         <div className="form-control md:w-1/2">
